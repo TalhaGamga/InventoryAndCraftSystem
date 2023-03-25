@@ -5,7 +5,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.InputSystem;
 using UnityEngine.EventSystems;
-
+ 
 public class MouseInventorySlotUI : MonoBehaviour
 {
     [SerializeField] private Image itemSprite;
@@ -17,7 +17,7 @@ public class MouseInventorySlotUI : MonoBehaviour
 
     private void Awake()
     {
-        itemSprite.color = Color.clear;
+        itemSprite.color = Color.clear; 
         itemCount.text = "";
     }
 

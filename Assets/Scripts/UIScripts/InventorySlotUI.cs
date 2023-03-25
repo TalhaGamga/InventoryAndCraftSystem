@@ -15,7 +15,7 @@ public class InventorySlotUI : MonoBehaviour
     private Button button;
     public InventorySlot AssignedInventorySlot => assignedInventorySlot;
 
-    public InventoryDisplay inventoryDisplayer { get; private set; }
+    public InventoryDisplayer inventoryDisplayer { get; private set; }
 
     private void Awake()
     {
@@ -23,7 +23,7 @@ public class InventorySlotUI : MonoBehaviour
         button = GetComponent<Button>();
         button.onClick.AddListener(OnClickSlotUI);
 
-        inventoryDisplayer = GetComponentInParent<InventoryDisplay>();
+        inventoryDisplayer = GetComponentInParent<InventoryDisplayer>();
     }
 
     public void Init(InventorySlot slotToAssign)

@@ -1,10 +1,10 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using System.Linq;
+using System.Linq; 
 using UnityEngine.InputSystem;
 
-public class InventoryDisplay : MonoBehaviour
+public class InventoryDisplayer : MonoBehaviour
 {
     [SerializeField] MouseInventorySlotUI mouseInventorySlotUI;
 
