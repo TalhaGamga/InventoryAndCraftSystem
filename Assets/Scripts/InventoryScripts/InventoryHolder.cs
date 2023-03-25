@@ -1,20 +1,18 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
-public class InventoryHolder : MonoBehaviour
+using System;
+public abstract class InventoryHolder : MonoBehaviour
 {
-    [SerializeField] private InventorySystem inventorySystem;
+    public InventorySystem primaryInventorySystem;
 
+    public static Action<InventorySystem> OnInventoryDisplayRequested;
     private void Awake()
     {
-        inventorySystem.Init();
+        primaryInventorySystem.Init(); 
     }
 
-    public InventorySystem InventorySystem => inventorySystem;
+    public InventorySystem InventorySystem => primaryInventorySystem;
 
-    public bool AddToInventory(InventoryItemData itemData)
-    {
-        return InventorySystem.AddToInventory(itemData, 1);
-    }
+    public abstract bool AddToInventory(InventoryItemData itemData);
 }

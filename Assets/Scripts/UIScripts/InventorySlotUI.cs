@@ -66,6 +66,5 @@ public class InventorySlotUI : MonoBehaviour
     private void OnClickSlotUI()
     {
         inventoryDisplayer?.SlotUIClicked(this);
-        Debug.Log("OnClickUI");
     }
 }

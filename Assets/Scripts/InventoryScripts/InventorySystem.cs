@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
 using System.Linq;
+using System;
 
 [CreateAssetMenu(menuName = "Inventory/InventorySystem")]
 public class InventorySystem : ScriptableObject
@@ -11,12 +12,11 @@ public class InventorySystem : ScriptableObject
 
     public List<InventorySlot> inventorySlots;
 
-    public List<InventorySlot> InventorySlots => inventorySlots;
+    public List<InventorySlot> InventorySlots => inventorySlots; 
 
     public int InventorySize => InventorySlots.Count;
 
-    public UnityAction<InventorySlot> OnInventorySlotChanged;
-
+    public Action<InventorySlot> OnInventorySlotChanged;
 
     public void Init()
     {

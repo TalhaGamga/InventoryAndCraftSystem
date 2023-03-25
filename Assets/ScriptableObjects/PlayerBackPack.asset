@@ -13,4 +13,64 @@ MonoBehaviour:
   m_Name: PlayerBackPack
   m_EditorClassIdentifier: 
   inventorySize: 30
-  inventorySlots: []
+  inventorySlots:
+  - itemData: {fileID: 0}
+    stackSize: 0
+  - itemData: {fileID: 0}
+    stackSize: 0
+  - itemData: {fileID: 0}
+    stackSize: 0
+  - itemData: {fileID: 0}
+    stackSize: 0
+  - itemData: {fileID: 0}
+    stackSize: 0
+  - itemData: {fileID: 0}
+    stackSize: 0
+  - itemData: {fileID: 0}
+    stackSize: 0
+  - itemData: {fileID: 0}
+    stackSize: 0
+  - itemData: {fileID: 0}
+    stackSize: 0
+  - itemData: {fileID: 0}
+    stackSize: 0
+  - itemData: {fileID: 0}
+    stackSize: 0
+  - itemData: {fileID: 0}
+    stackSize: 0
+  - itemData: {fileID: 0}
+    stackSize: 0
+  - itemData: {fileID: 0}
+    stackSize: 0
+  - itemData: {fileID: 0}
+    stackSize: 0
+  - itemData: {fileID: 0}
+    stackSize: 0
+  - itemData: {fileID: 0}
+    stackSize: 0
+  - itemData: {fileID: 0}
+    stackSize: 0
+  - itemData: {fileID: 0}
+    stackSize: 0
+  - itemData: {fileID: 0}
+    stackSize: 0
+  - itemData: {fileID: 0}
+    stackSize: 0
+  - itemData: {fileID: 0}
+    stackSize: 0
+  - itemData: {fileID: 0}
+    stackSize: 0
+  - itemData: {fileID: 0}
+    stackSize: 0
+  - itemData: {fileID: 0}
+    stackSize: 0
+  - itemData: {fileID: 0}
+    stackSize: 0
+  - itemData: {fileID: 0}
+    stackSize: 0
+  - itemData: {fileID: 0}
+    stackSize: 0
+  - itemData: {fileID: 0}
+    stackSize: 0
+  - itemData: {fileID: 0}
+    stackSize: 0
