@@ -10,7 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: f7544fa791a24bf41a89bc07bf043b76, type: 3}
-  m_Name: PlayerHotbarInventorySystem
+  m_Name: PlayerHotbar
   m_EditorClassIdentifier: 
   inventorySize: 10
   inventorySlots:
