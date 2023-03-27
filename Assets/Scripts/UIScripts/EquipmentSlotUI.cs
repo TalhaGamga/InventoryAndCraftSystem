@@ -28,7 +28,7 @@ public class EquipmentSlotUI : MonoBehaviour
 
     private void UpdateUISlot(EquipmentSlot slot)
     {
-        if (slot.itemData != null)
+        if (slot.itemData != null) 
         {
             itemSprite.sprite = slot.itemData.Icon;
             itemSprite.color = Color.white;
@@ -48,7 +48,6 @@ public class EquipmentSlotUI : MonoBehaviour
     public void Init(EquipmentSlot slotToAssign)
     {
         assignedEquipmentSlot = slotToAssign;
-        AssignedEquipmentSlot.bodyPart = bodyPart;
     }
 
     private void ClearSlot()
@@ -62,5 +61,15 @@ public class EquipmentSlotUI : MonoBehaviour
     public void OnClickSlotUI()
     {
         equipmentDisplayer?.SlotUIClicked(this);
+    }
+
+    public bool CheckBodyType(EquipmentItemData itemData)
+    {
+        if (itemData.bodyPart == bodyPart)
+        {
+            return true;
+        }
+
+        return false;
     }
 }

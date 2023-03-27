@@ -7,7 +7,15 @@ public class EquipmentSlot
 {
     public EquipmentItemData itemData;
 
-    public BodyPart bodyPart;
+    public EquipmentSlot(EquipmentItemData itemData)
+    {
+        this.itemData = itemData;
+    }
+
+    public EquipmentSlot()
+    {
+
+    }
 
     public void ClearSlot()
     {
@@ -16,13 +24,13 @@ public class EquipmentSlot
 
     public bool AssignItem(EquipmentItemData itemData)
     {
-        if (bodyPart==itemData.bodyPart)
-        {
-            this.itemData = itemData;
-            return true;
-        }
+        this.itemData = itemData;
+        return true;
+    }
 
-        return false;
+    public void UpdateSlot(EquipmentItemData itemData) 
+    {
+        this.itemData = itemData;
     }
 
     public bool IsSlotEmpty()

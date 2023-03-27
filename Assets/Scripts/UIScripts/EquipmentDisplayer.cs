@@ -19,7 +19,7 @@ public class EquipmentDisplayer : MonoBehaviour
 
         equipmentSystem.OnEquipmentSlotChanged += UpdateUISlot;
     }
-     
+
     public void AssignSlots()
     {
         equipmentSystem.Init();
@@ -34,22 +34,46 @@ public class EquipmentDisplayer : MonoBehaviour
         }
     }
 
-    internal void SlotUIClicked(EquipmentSlotUI equipmentSlotUI) //FULLFILL HEREEE!
+    internal void SlotUIClicked(EquipmentSlotUI equipmentSlotUI)
     {
-        if (mouseInventorySlotUI.AssignedInventorySlot.ItemData == null || mouseInventorySlotUI.AssignedInventorySlot.ItemData.itemType != ItemType.equipment)
+        if (mouseInventorySlotUI.AssignedInventorySlot.ItemData != null && mouseInventorySlotUI.AssignedInventorySlot.ItemData.itemType != ItemType.equipment)
         {
             return;
         }
 
-        if (mouseInventorySlotUI.AssignedInventorySlot.ItemData.GetType() == typeof(EquipmentItemData))
+        if (equipmentSlotUI.AssignedEquipmentSlot.itemData == null)
         {
-            if (equipmentSystem.EquipItem((EquipmentItemData)mouseInventorySlotUI.AssignedInventorySlot.itemData, equipmentSlotUI.AssignedEquipmentSlot))
+            if (equipmentSlotUI.CheckBodyType((EquipmentItemData)mouseInventorySlotUI.AssignedInventorySlot.itemData))
             {
+                equipmentSlotUI.AssignedEquipmentSlot.AssignItem((EquipmentItemData)mouseInventorySlotUI.AssignedInventorySlot.itemData);
+                equipmentSlotUI.UpdateUISlot();
                 mouseInventorySlotUI.ClearSlot();
-
             }
         }
 
+        else if (equipmentSlotUI.AssignedEquipmentSlot.itemData != null && mouseInventorySlotUI.AssignedInventorySlot.itemData == null)
+        {
+            EquipmentSlot equipmentSlot = new EquipmentSlot(equipmentSlotUI.AssignedEquipmentSlot.itemData);
+            equipmentSlotUI.AssignedEquipmentSlot.UpdateSlot((EquipmentItemData)mouseInventorySlotUI.AssignedInventorySlot.itemData);
+            equipmentSlotUI.UpdateUISlot();
+
+            mouseInventorySlotUI.AssignedInventorySlot.UpdateSlot(equipmentSlot.itemData, 1);
+            mouseInventorySlotUI.UpdateUISlot();
+        }
+
+        else if (equipmentSlotUI.AssignedEquipmentSlot.itemData != null && mouseInventorySlotUI.AssignedInventorySlot.itemData != null)
+        {
+            EquipmentItemData mouseEquipmentData = (EquipmentItemData)mouseInventorySlotUI.AssignedInventorySlot.itemData;
+
+            if (mouseEquipmentData.bodyPart == equipmentSlotUI.AssignedEquipmentSlot.itemData.bodyPart)
+            {
+                mouseInventorySlotUI.AssignedInventorySlot.UpdateSlot(equipmentSlotUI.AssignedEquipmentSlot.itemData, 1);
+                mouseInventorySlotUI.UpdateUISlot();
+
+                equipmentSlotUI.AssignedEquipmentSlot.UpdateSlot(mouseEquipmentData);
+                equipmentSlotUI.UpdateUISlot();
+            }
+        }
     }
 
     private void UpdateUISlot(EquipmentSlot slotToUpdate)
