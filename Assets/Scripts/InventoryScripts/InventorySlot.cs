@@ -29,7 +29,7 @@ public class InventorySlot
     }
 
     public void AssignItem(InventorySlot invSlot)
-    {
+    { 
         if (ItemData == invSlot.ItemData)
         {
             AddToStack(invSlot.StackSize);

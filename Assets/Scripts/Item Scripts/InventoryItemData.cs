@@ -13,6 +13,8 @@ public class InventoryItemData : ScriptableObject
     public int MaxStackSize;
     public int Value;
 
+    public ItemType itemType;
+
     public bool Collect(InventoryHolder inventoryHolder)
     {
         return inventoryHolder.AddToInventory(this);
