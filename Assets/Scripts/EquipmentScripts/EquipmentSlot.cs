@@ -7,6 +7,7 @@ public class EquipmentSlot
 {
     public EquipmentItemData itemData;
 
+    [SerializeField] BodyPart bodyPart;
     public EquipmentSlot(EquipmentItemData itemData)
     {
         this.itemData = itemData;
@@ -24,11 +25,16 @@ public class EquipmentSlot
 
     public bool AssignItem(EquipmentItemData itemData)
     {
-        this.itemData = itemData;
-        return true;
+        if (bodyPart == itemData.bodyPart)
+        {
+            this.itemData = itemData;
+            return true;
+        }
+
+        return false;
     }
 
-    public void UpdateSlot(EquipmentItemData itemData) 
+    public void UpdateSlot(EquipmentItemData itemData)
     {
         this.itemData = itemData;
     }
@@ -38,5 +44,10 @@ public class EquipmentSlot
         if (itemData == null) return true;
 
         return false;
+    }
+
+    public void AssignBodyPart(BodyPart bodyPart)
+    {
+        this.bodyPart = bodyPart;
     }
 }

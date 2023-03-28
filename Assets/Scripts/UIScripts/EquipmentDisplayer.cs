@@ -31,17 +31,19 @@ public class EquipmentDisplayer : MonoBehaviour
             slotDictionary.Add(uiSlots[i], equipmentSystem.equipmentSlots[i]);
 
             uiSlots[i].Init(equipmentSystem.equipmentSlots[i]);
+
+            equipmentSystem.equipmentSlots[i].AssignBodyPart(uiSlots[i].bodyPart);
         }
     }
 
-    internal void SlotUIClicked(EquipmentSlotUI equipmentSlotUI)
+    public void SlotUIClicked(EquipmentSlotUI equipmentSlotUI)
     {
         if (mouseInventorySlotUI.AssignedInventorySlot.ItemData != null && mouseInventorySlotUI.AssignedInventorySlot.ItemData.itemType != ItemType.equipment)
         {
             return;
         }
 
-        if (equipmentSlotUI.AssignedEquipmentSlot.itemData == null)
+        if (equipmentSlotUI.AssignedEquipmentSlot.itemData == null && mouseInventorySlotUI.AssignedInventorySlot.itemData!=null)
         {
             if (equipmentSlotUI.CheckBodyType((EquipmentItemData)mouseInventorySlotUI.AssignedInventorySlot.itemData))
             {

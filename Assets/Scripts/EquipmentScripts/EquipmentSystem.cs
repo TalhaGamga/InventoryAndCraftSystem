@@ -26,7 +26,16 @@ public class EquipmentSystem : ScriptableObject
         if (slot.AssignItem(itemData))
         {
             OnEquipmentSlotChanged?.Invoke(slot);
-            return true; 
+            return true;
+        }
+
+        return false;
+    }
+    public bool EquipItem(EquipmentItemData itemData)
+    {
+        for (int i = 0; i < size; i++)
+        {
+            if (equipmentSlots[i].AssignItem(itemData)) return true;
         }
 
         return false;

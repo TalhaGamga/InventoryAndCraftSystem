@@ -16,7 +16,7 @@ public class EquipmentSlotUI : MonoBehaviour
 
     public EquipmentDisplayer equipmentDisplayer { get; private set; }
 
-    [SerializeField] BodyPart bodyPart;
+    public BodyPart bodyPart;
     private void Awake()
     {
         ClearSlot();
