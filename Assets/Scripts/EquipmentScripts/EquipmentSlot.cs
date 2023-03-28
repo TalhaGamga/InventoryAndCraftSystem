@@ -8,6 +8,8 @@ public class EquipmentSlot
     public EquipmentItemData itemData;
 
     [SerializeField] BodyPart bodyPart;
+
+    [SerializeField] Transform attachTransform;
     public EquipmentSlot(EquipmentItemData itemData)
     {
         this.itemData = itemData;
@@ -28,6 +30,9 @@ public class EquipmentSlot
         if (bodyPart == itemData.bodyPart)
         {
             this.itemData = itemData;
+
+            itemData.Attach(attachTransform);
+
             return true;
         }
 

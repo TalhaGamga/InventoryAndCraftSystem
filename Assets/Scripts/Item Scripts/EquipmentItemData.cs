@@ -14,14 +14,12 @@ public class EquipmentItemData : InventoryItemData
     public GameObject itemPrefab;
 
     GameObject item;
-    public void Attach(Transform parent, BodyPart bodyPart)
+    public void Attach(Transform parent)
     {
-        if (this.bodyPart == bodyPart)
-        {
-            item = Instantiate(itemPrefab, localPosition, Quaternion.identity, parent);
-            item.transform.localRotation = localRotation;
-            item.transform.localScale = localScale;
-        }
+        //item = Instantiate(itemPrefab, localPosition, Quaternion.identity, parent);
+        //item.transform.localRotation = localRotation;
+        //item.transform.localScale = localScale;
+        Debug.Log("Item attached");
     }
 
     public void Remove()
