@@ -10,6 +10,8 @@ public class PlayerMovement : MonoBehaviour
     private float gravityValue = -9.81f;
 
     private PlayerControls playerControls;
+
+    [SerializeField] Animator anim;
     private void Awake()
     {
         controller = gameObject.GetComponent<CharacterController>();
@@ -40,6 +42,12 @@ public class PlayerMovement : MonoBehaviour
         if (move != Vector3.zero)
         {
             gameObject.transform.forward = move;
+            anim.SetBool("Walk",true);
+        }
+
+        else
+        {
+            anim.SetBool("Walk", false);
         }
 
         playerVelocity.y += gravityValue * Time.deltaTime;
