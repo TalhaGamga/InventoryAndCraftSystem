@@ -31,8 +31,6 @@ public class EquipmentDisplayer : MonoBehaviour
             slotDictionary.Add(uiSlots[i], equipmentSystem.equipmentSlots[i]);
 
             uiSlots[i].Init(equipmentSystem.equipmentSlots[i]);
-
-            equipmentSystem.equipmentSlots[i].AssignBodyPart(uiSlots[i].bodyPart);
         }
     }
 
@@ -43,7 +41,7 @@ public class EquipmentDisplayer : MonoBehaviour
             return;
         }
 
-        if (equipmentSlotUI.AssignedEquipmentSlot.itemData == null && mouseInventorySlotUI.AssignedInventorySlot.itemData!=null)
+        if (equipmentSlotUI.AssignedEquipmentSlot.itemData == null && mouseInventorySlotUI.AssignedInventorySlot.itemData != null)
         {
             if (equipmentSlotUI.CheckBodyType((EquipmentItemData)mouseInventorySlotUI.AssignedInventorySlot.itemData))
             {
@@ -55,10 +53,13 @@ public class EquipmentDisplayer : MonoBehaviour
 
         else if (equipmentSlotUI.AssignedEquipmentSlot.itemData != null && mouseInventorySlotUI.AssignedInventorySlot.itemData == null)
         {
-            EquipmentSlot equipmentSlot = new EquipmentSlot(equipmentSlotUI.AssignedEquipmentSlot.itemData);
-            equipmentSlotUI.AssignedEquipmentSlot.UpdateSlot((EquipmentItemData)mouseInventorySlotUI.AssignedInventorySlot.itemData);
-            equipmentSlotUI.UpdateUISlot();
+            Debug.Log("item data null");
 
+            EquipmentSlot equipmentSlot = new EquipmentSlot(equipmentSlotUI.AssignedEquipmentSlot.itemData);
+
+            equipmentSlotUI.AssignedEquipmentSlot.UnEquipItem();//Unequip and clear
+            equipmentSlotUI.UpdateUISlot();
+             
             mouseInventorySlotUI.AssignedInventorySlot.UpdateSlot(equipmentSlot.itemData, 1);
             mouseInventorySlotUI.UpdateUISlot();
         }

@@ -13,16 +13,22 @@ public class EquipmentItemData : InventoryItemData
 
     public GameObject itemPrefab;
 
-    GameObject item;
+    [HideInInspector] public GameObject item;
+
     public void Attach(Transform parent)
     {
-        //item = Instantiate(itemPrefab, localPosition, Quaternion.identity, parent);
-        //item.transform.localRotation = localRotation;
-        //item.transform.localScale = localScale;
-        Debug.Log("Item attached");
+        if (item==null)
+        {
+            item = Instantiate(itemPrefab);
+        }
+
+        item.transform.SetParent(parent);
+        item.transform.localPosition = localPosition;
+        item.transform.localRotation = localRotation;
+        item.transform.localScale = localScale;
     }
 
-    public void Remove()
+    public void RemoveItem()
     {
         Destroy(item);
     }

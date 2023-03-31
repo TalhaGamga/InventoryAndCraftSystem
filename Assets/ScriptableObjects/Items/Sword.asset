@@ -19,7 +19,8 @@ MonoBehaviour:
   MaxStackSize: 1
   Value: 2500
   itemType: 1
-  localPosition: {x: 0, y: 0, z: 0}
-  localRotation: {x: 0, y: 0, z: 0}
-  localScale: {x: 0, y: 0, z: 0}
+  localPosition: {x: -0.186, y: 0.071, z: 0.029}
+  localRotation: {x: -0.112997666, y: 0.1690618, z: -0.6876352, w: -0.69699883}
+  localScale: {x: 1, y: 1, z: 1}
   bodyPart: 3
+  itemPrefab: {fileID: 5096797749881093665, guid: c7349441bb611af45ad4757004d4542b, type: 3}

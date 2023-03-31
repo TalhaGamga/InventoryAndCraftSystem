@@ -24,10 +24,28 @@ public class PlayerInput : MonoBehaviour
 
     public bool IsHoldingLeftShift => Keyboard.current.leftShiftKey.isPressed;
 
+    public delegate void OnAttackInput();
+    public static event OnAttackInput onAttackInput;
+
+    public delegate void OnSwitchState();
+    public static event OnSwitchState onSwitchState;
+
+    private InputAction switchStateAction;
+    private InputAction attackAction;
+
     void Awake()
     {
         playerControls = new PlayerControls();
         playerControls?.Enable();
+    }
+
+    private void Start()
+    {
+        switchStateAction = new InputAction("SwitchState", InputActionType.Button, "<Keyboard>/R");
+        switchStateAction?.Enable();
+
+        attackAction = new InputAction("Attack", InputActionType.Button, "<Mouse>/LeftButton");
+        attackAction?.Enable();
     }
 
     public void CheckInput()
@@ -40,9 +58,13 @@ public class PlayerInput : MonoBehaviour
         horizontalMouseInput = delta.x * mouseSensitivityX;
         verticalMouseInput = delta.y * mouseSesitivityY;
 
-        if (Keyboard.current.spaceKey.wasPressedThisFrame)
+        if (Keyboard.current.spaceKey.wasPressedThisFrame) 
         {
             OnJumpPress?.Invoke();
         }
+
+        if (attackAction.triggered) onAttackInput?.Invoke();
+
+        if (switchStateAction.triggered) onSwitchState?.Invoke();
     }
 }

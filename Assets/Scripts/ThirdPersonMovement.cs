@@ -18,7 +18,7 @@ public class ThirdPersonMovement : MonoBehaviour
 
     [SerializeField] private float verticalVelocity;
     private float turnSmoothVelocity;
-    public float CurrentMoveSpeed;
+    [SerializeField] public float CurrentMoveSpeed;
 
     private bool jumpTrigger;
     private bool isRunning;
@@ -27,7 +27,8 @@ public class ThirdPersonMovement : MonoBehaviour
     [SerializeField] private float groundRadius = 0.28f;
     [SerializeField] private LayerMask groundmask;
 
-    private void Awake()
+    [SerializeField] float moveSpeed;
+    private void Awake() 
     {
         controller = GetComponent<CharacterController>();
     }
@@ -39,14 +40,15 @@ public class ThirdPersonMovement : MonoBehaviour
     public void Move(float inputX, float inputY)
     {
         Vector3 moveDirection = playerCam.right * inputX + playerCam.forward * inputY;
-        float moveSpeed = isRunning ? runSpeed : walkSpeed;
+        moveSpeed = isRunning ? runSpeed : walkSpeed;
 
         controller.Move(moveDirection.normalized * (moveSpeed * Time.deltaTime) + new Vector3(0.0f, verticalVelocity * Time.deltaTime, 0.0f));
 
         float moveMagnitude = moveDirection.magnitude;
 
         JumpAndGravity();
-        CurrentMoveSpeed = isRunning ? runSpeed * moveMagnitude : walkSpeed * moveMagnitude;
+        //CurrentMoveSpeed = isRunning ? runSpeed * moveMagnitude : walkSpeed * moveMagnitude;
+        CurrentMoveSpeed = Mathf.Lerp(CurrentMoveSpeed, moveSpeed * moveMagnitude, 0.05f);
 
         if (moveMagnitude > 0)
         {

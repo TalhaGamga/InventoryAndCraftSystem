@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 [CreateAssetMenu(menuName = "Inventory/EquipmentSystem")]
-public class EquipmentSystem : ScriptableObject
+public class EquipmentSystem : ScriptableObject 
 {
     public int size;
     public EquipmentSlot[] equipmentSlots;

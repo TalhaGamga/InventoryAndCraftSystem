@@ -3,13 +3,13 @@ using System.Collections.Generic;
 using UnityEngine;
 
 [System.Serializable]
-public class EquipmentSlot
+public class EquipmentSlot 
 {
     public EquipmentItemData itemData;
 
     [SerializeField] BodyPart bodyPart;
 
-    [SerializeField] Transform attachTransform;
+    [HideInInspector] public Transform attachTransform;
     public EquipmentSlot(EquipmentItemData itemData)
     {
         this.itemData = itemData;
@@ -31,7 +31,7 @@ public class EquipmentSlot
         {
             this.itemData = itemData;
 
-            itemData.Attach(attachTransform);
+            EquipItem();
 
             return true;
         }
@@ -54,5 +54,16 @@ public class EquipmentSlot
     public void AssignBodyPart(BodyPart bodyPart)
     {
         this.bodyPart = bodyPart;
+    }
+
+    public void EquipItem()
+    {
+        itemData.Attach(attachTransform);
+    }
+
+    public void UnEquipItem()
+    {
+        itemData.RemoveItem();
+        ClearSlot();
     }
 }

@@ -16,10 +16,11 @@ public class EquipmentSlotUI : MonoBehaviour
 
     public EquipmentDisplayer equipmentDisplayer { get; private set; }
 
+    public Transform attachTransform;
+
     public BodyPart bodyPart;
     private void Awake()
-    {
-        ClearSlot();
+    {   
         button = GetComponent<Button>();
         button.onClick.AddListener(OnClickSlotUI);
 
@@ -48,6 +49,10 @@ public class EquipmentSlotUI : MonoBehaviour
     public void Init(EquipmentSlot slotToAssign)
     {
         assignedEquipmentSlot = slotToAssign;
+
+        assignedEquipmentSlot.attachTransform = attachTransform;
+
+        assignedEquipmentSlot.AssignBodyPart(bodyPart);
     }
 
     private void ClearSlot()
