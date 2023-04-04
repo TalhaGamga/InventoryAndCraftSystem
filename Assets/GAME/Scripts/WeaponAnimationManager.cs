@@ -11,7 +11,7 @@ public class WeaponAnimationManager : MonoBehaviour
 
     GameObject item;
     public void DrawWeapon()
-    {
+    { 
         if (weaponEquipmentSlot.AssignedEquipmentSlot.itemData != null)
         {
             item = weaponEquipmentSlot.AssignedEquipmentSlot.itemData.item;

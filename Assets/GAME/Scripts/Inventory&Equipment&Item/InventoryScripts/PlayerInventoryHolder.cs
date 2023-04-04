@@ -27,6 +27,11 @@ public class PlayerInventoryHolder : InventoryHolder
 
     private void Update()
     {
-        if (Keyboard.current.bKey.wasPressedThisFrame) OnPlayerBackpackDisplayRequested?.Invoke(secondaryInventorySystem);
+        if (Keyboard.current.bKey.wasPressedThisFrame)
+        {
+            OnPlayerBackpackDisplayRequested?.Invoke(secondaryInventorySystem);
+
+            EventManager.OnSwitchToUIControllerState?.Invoke();
+        }
     }
 }

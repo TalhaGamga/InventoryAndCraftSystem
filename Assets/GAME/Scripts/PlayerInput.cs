@@ -16,8 +16,6 @@ public class PlayerInput : MonoBehaviour
 
     PlayerControls playerControls;
 
-    private Vector2 mouseMovement;
-
     public Action OnJumpPress;
 
     [SerializeField] Vector2 delta;
@@ -30,10 +28,8 @@ public class PlayerInput : MonoBehaviour
     public delegate void OnSwitchState();
     public static event OnSwitchState onSwitchState;
 
-    private InputAction switchStateAction;
+    private InputAction switchStateAction; //R
     private InputAction attackAction;
-
-    private InputAction movementAction;
 
     void Awake()
     {
@@ -48,8 +44,6 @@ public class PlayerInput : MonoBehaviour
 
         attackAction = new InputAction("Attack", InputActionType.Button, "<Mouse>/LeftButton");
         attackAction?.Enable();
-
-        movementAction = playerControls.FindAction("Movement");
     }
 
     public void CheckInput()
@@ -62,8 +56,8 @@ public class PlayerInput : MonoBehaviour
         horizontalMouseInput = delta.x * mouseSensitivityX;
         verticalMouseInput = delta.y * mouseSesitivityY;
 
-        if (Keyboard.current.spaceKey.wasPressedThisFrame) 
-        {
+        if (Keyboard.current.spaceKey.wasPressedThisFrame)
+        { 
             OnJumpPress?.Invoke();
         }
 

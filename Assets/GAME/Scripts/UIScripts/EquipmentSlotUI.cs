@@ -19,6 +19,7 @@ public class EquipmentSlotUI : MonoBehaviour
     public Transform attachTransform;
 
     public BodyPart bodyPart;
+
     private void Awake()
     {   
         button = GetComponent<Button>();

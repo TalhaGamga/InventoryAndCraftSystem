@@ -9,7 +9,13 @@ public class EquipmentUIManager : MonoBehaviour
 
     private void Update()
     {
-        if (Keyboard.current.f5Key.wasPressedThisFrame) equipmentWindow.SetActive(!equipmentWindow.activeInHierarchy);
+        if (Keyboard.current.f5Key.wasPressedThisFrame)
+        {
+            equipmentWindow.SetActive(!equipmentWindow.activeInHierarchy);
+
+            EventManager.OnSwitchToUIControllerState?.Invoke();
+        }
+
         if (Keyboard.current.escapeKey.wasPressedThisFrame) equipmentWindow.SetActive(false);
     }
 }

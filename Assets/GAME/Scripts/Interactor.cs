@@ -22,10 +22,11 @@ public class Interactor : MonoBehaviour
                 {
                     return;
                 }
-                
-                if (Vector3.Distance(transform.position,scanColliders[i].transform.position) <= scanRadius && 
+
+                if (Vector3.Distance(transform.position, scanColliders[i].transform.position) <= scanRadius &&
                     scanColliders[i].TryGetComponent<IInteractable>(out IInteractable interactable))
                 {
+                    EventManager.OnSwitchToUIControllerState?.Invoke();
                     interactable.Interact();
                 }
             }

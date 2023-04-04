@@ -5,10 +5,11 @@ using UnityEngine;
 
 public enum CharacterStateType
 {
-    NeutralState,
-    CombatState
+    MovementState,
+    CombatState,
+    UIControlState
 }
-public abstract class CharacterStateBase : ScriptableObject
+public abstract class CharacterStateBase 
 {
     public abstract void EnterState(CharacterStateManager characterStateManager);
 
