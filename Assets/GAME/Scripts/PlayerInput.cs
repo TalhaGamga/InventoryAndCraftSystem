@@ -57,7 +57,7 @@ public class PlayerInput : MonoBehaviour
         verticalMouseInput = delta.y * mouseSesitivityY;
 
         if (Keyboard.current.spaceKey.wasPressedThisFrame)
-        { 
+        {
             OnJumpPress?.Invoke();
         }
 

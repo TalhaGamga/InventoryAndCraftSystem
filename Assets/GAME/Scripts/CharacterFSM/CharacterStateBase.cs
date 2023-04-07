@@ -5,9 +5,9 @@ using UnityEngine;
 
 public enum CharacterStateType
 {
-    MovementState,
-    CombatState,
-    UIControlState
+    Movement,
+    Combat,
+    UIControl
 }
 public abstract class CharacterStateBase 
 {

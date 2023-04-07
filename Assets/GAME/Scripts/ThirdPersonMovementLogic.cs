@@ -36,18 +36,16 @@ public class ThirdPersonMovementLogic
 
     private float groundOffSet = -0.22f;
     private float groundRadius = 0.28f;
-    LayerMask groundMask;
 
     private float moveSpeed;
 
 
-    public ThirdPersonMovementLogic(Transform camera, CharacterController controller, GameObject avatar, PlayerInput playerInput, LayerMask groundMask,Animator animator)
+    public ThirdPersonMovementLogic(Transform camera, CharacterController controller, GameObject avatar, PlayerInput playerInput,Animator animator)
     {
         playerCam = camera;
         this.controller = controller;
         this.avatar = avatar;
         this.playerInput = playerInput;
-        this.groundMask = groundMask;
 
         this.animator = animator;
     }
