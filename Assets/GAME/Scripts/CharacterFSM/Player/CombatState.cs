@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class CombatState : CharacterStateBase
+public class CombatState : CharacterStateBase<PlayerStateManager>
 {
     Animator animator;
 
@@ -21,15 +21,14 @@ public class CombatState : CharacterStateBase
         this.movementLogic = movementLogic;
     }
 
-    public override void EnterState(CharacterStateManager characterStateManager)
+    public override void EnterState(PlayerStateManager characterStateManager)
     {
         animator.SetTrigger("DrawWeapon");
-
 
         PlayerInput.onAttackInput += PerformAttack;
     }
 
-    public override void UpdateState(CharacterStateManager characterStateManager)
+    public override void UpdateState(PlayerStateManager characterStateManager)
     {
         playerInput.CheckInput();
 
@@ -41,7 +40,7 @@ public class CombatState : CharacterStateBase
         movementLogic.UpdateAnimator();
     }
 
-    public override void ExitState(CharacterStateManager characterStateManager)
+    public override void ExitState(PlayerStateManager characterStateManager)
     {
 
         animator.SetTrigger("SheathWeapon");

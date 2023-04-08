@@ -2,26 +2,35 @@
 using System.Collections.Generic;
 using UnityEngine;
 using System;
-public class CharacterStateManager : MonoBehaviour
+public class PlayerStateManager : MonoBehaviour
 {
     [SerializeField] Transform thirdPersonCamera;
     [SerializeField] GameObject avatar;
 
-    CharacterStateBase currentState;
+    CharacterStateBase<PlayerStateManager> currentState;
 
     MovementState movementState;
     CombatState combatState;
     UIControlState uiControlState;
 
-    CharacterStateType currentStateType = CharacterStateType.Movement;
+    PlayerStateType currentStateType = PlayerStateType.Movement;
 
     ThirdPersonMovementLogic movementLogic;
     [SerializeField] EquipmentSlotUI weaponSlot; //this should be different.
+
+    private void Awake()
+    {
+        movementLogic = new ThirdPersonMovementLogic(thirdPersonCamera, GetComponent<CharacterController>(), avatar, GetComponent<PlayerInput>(), GetComponent<Animator>());
+        movementState = new MovementState(movementLogic, GetComponent<Animator>(), GetComponent<PlayerInput>());
+        combatState = new CombatState(GetComponent<PlayerInput>(), movementLogic, GetComponent<Animator>());
+        uiControlState = new UIControlState();
+    }
+
     private void OnEnable()
     {
         PlayerInput.onSwitchState += SwitchStateBetweenAttackAndMovement;
 
-        PlayerInput.onAttackInput += SwitchToCombatState; 
+        PlayerInput.onAttackInput += SwitchToCombatState;
     }
 
     private void OnDisable()
@@ -31,14 +40,6 @@ public class CharacterStateManager : MonoBehaviour
         PlayerInput.onAttackInput -= SwitchToCombatState;
 
         EventManager.OnSwitchToUIControllerState -= SwitchToUIControllerState;
-    }
-
-    private void Awake()
-    {
-        movementLogic = new ThirdPersonMovementLogic(thirdPersonCamera, GetComponent<CharacterController>(), avatar, GetComponent<PlayerInput>() ,GetComponent<Animator>());
-        movementState = new MovementState(movementLogic, GetComponent<Animator>(), GetComponent<PlayerInput>());
-        combatState = new CombatState(GetComponent<PlayerInput>(), movementLogic, GetComponent<Animator>());
-        uiControlState = new UIControlState();
     }
 
     private void Start()
@@ -59,66 +60,66 @@ public class CharacterStateManager : MonoBehaviour
         currentState.ExitState(this);
 
         switch (currentStateType)
-        { 
-            case CharacterStateType.Movement:
+        {
+            case PlayerStateType.Movement:
                 if (weaponSlot.AssignedEquipmentSlot.itemData != null)
                 {
                     currentState = combatState;
                     currentState.EnterState(this);
 
-                    currentStateType = CharacterStateType.Combat;
+                    currentStateType = PlayerStateType.Combat;
 
                     PlayerInput.onAttackInput -= SwitchToCombatState;
-                }   
+                }
                 break;
 
-            case CharacterStateType.Combat:
+            case PlayerStateType.Combat:
                 currentState = movementState;
                 currentState.EnterState(this);
 
-                currentStateType = CharacterStateType.Movement;
+                currentStateType = PlayerStateType.Movement;
 
                 PlayerInput.onAttackInput += SwitchToCombatState;
                 break;
         }
     }
 
-    public void SwitchState(CharacterStateType switchToState)
+    public void SwitchState(PlayerStateType switchToState)
     {
         currentState.ExitState(this);
-        
+
 
         switch (switchToState)
         {
-            case CharacterStateType.Movement: // Switch to movement state
+            case PlayerStateType.Movement: // Switch to movement state
                 currentState = movementState;
                 currentState.EnterState(this);
 
-                currentStateType = CharacterStateType.Movement;
+                currentStateType = PlayerStateType.Movement;
 
                 PlayerInput.onAttackInput += SwitchToCombatState;
                 break;
 
-            case CharacterStateType.Combat: // Switch to combat state
+            case PlayerStateType.Combat: // Switch to combat state
                 if (weaponSlot.AssignedEquipmentSlot.itemData != null)
                 {
                     currentState = combatState;
                     currentState.EnterState(this);
 
-                    currentStateType = CharacterStateType.Combat;
+                    currentStateType = PlayerStateType.Combat;
 
                     PlayerInput.onAttackInput -= SwitchToCombatState;
                 }
 
                 break;
 
-            case CharacterStateType.UIControl: // Switch to ui controller state
-                CharacterStateType formerStateType = currentStateType;
+            case PlayerStateType.UIControl: // Switch to ui controller state
+                PlayerStateType formerStateType = currentStateType;
                 currentState = uiControlState;
                 currentState.EnterState(this);
                 ((UIControlState)currentState).GetFormerState(formerStateType, this);
 
-                currentStateType = CharacterStateType.UIControl;
+                currentStateType = PlayerStateType.UIControl;
 
                 PlayerInput.onAttackInput -= SwitchToCombatState;
 
@@ -128,11 +129,11 @@ public class CharacterStateManager : MonoBehaviour
 
     public void SwitchToCombatState()
     {
-        SwitchState(CharacterStateType.Combat);
+        SwitchState(PlayerStateType.Combat);
     }
 
     public void SwitchToUIControllerState()
     {
-        SwitchState(CharacterStateType.UIControl);
+        SwitchState(PlayerStateType.UIControl);
     }
 }

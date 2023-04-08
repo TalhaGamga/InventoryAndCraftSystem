@@ -53,8 +53,6 @@ public class EquipmentDisplayer : MonoBehaviour
 
         else if (equipmentSlotUI.AssignedEquipmentSlot.itemData != null && mouseInventorySlotUI.AssignedInventorySlot.itemData == null)
         {
-            Debug.Log("item data null");
-
             EquipmentSlot equipmentSlot = new EquipmentSlot(equipmentSlotUI.AssignedEquipmentSlot.itemData);
 
             equipmentSlotUI.AssignedEquipmentSlot.UnEquipItem();//Unequip and clear

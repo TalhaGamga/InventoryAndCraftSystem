@@ -3,7 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class AICombatState : AIStateBase
+public class AICombatState : CharacterStateBase<AIStateManager>
 {
     private const float TURN_SMOOTH_TIME = 0.05f;
 

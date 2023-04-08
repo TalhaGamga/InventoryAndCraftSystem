@@ -19,7 +19,7 @@ public class AIStateManager : MonoBehaviour
     AIMovementState aIMovementState;
     AICombatState aICombatState;
     
-    AIStateBase currentState;
+    CharacterStateBase<AIStateManager> currentState;
 
      
     private void OnDrawGizmos()
@@ -28,7 +28,6 @@ public class AIStateManager : MonoBehaviour
         Gizmos.DrawWireSphere(scanPoint.position, idleScanRadius);
 
         Gizmos.color = Color.green; // Movement state 
-        //Gizmos.DrawWireSphere(scanPoint.position, movementScanRadius);
 
         Gizmos.color = Color.red; // combat state
         Gizmos.DrawWireSphere(scanPoint.position, combatScanRadius);

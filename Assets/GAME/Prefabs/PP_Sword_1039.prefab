@@ -11,7 +11,6 @@ GameObject:
   - component: {fileID: 5096797749881053697}
   - component: {fileID: 5096797749880283681}
   - component: {fileID: 5096797749879152865}
-  - component: {fileID: 1267870750177401054}
   - component: {fileID: 5561149271063375659}
   m_Layer: 0
   m_Name: PP_Sword_1039
@@ -85,20 +84,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!64 &1267870750177401054
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5096797749881093665}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 0
-  serializedVersion: 4
-  m_Convex: 1
-  m_CookingOptions: 30
-  m_Mesh: {fileID: 4300000, guid: 5dcae31d8c9fdea4c8ae0649cb922f4c, type: 3}
 --- !u!114 &5561149271063375659
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -118,3 +103,4 @@ MonoBehaviour:
   isAttackable: 0
   isAttacked: 0
   damage: 1
+  overrideController: {fileID: 22100000, guid: 062aaccf49fcb2449b410a953e9e585e, type: 2}

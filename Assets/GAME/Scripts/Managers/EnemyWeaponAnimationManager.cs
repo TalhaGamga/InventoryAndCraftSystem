@@ -6,11 +6,11 @@ public class EnemyWeaponAnimationManager : MonoBehaviour
 {
     public void StartDamage()
     {
-        GetComponentInChildren<SwordDamageManager>().StartDamage();
+        GetComponentInChildren<Weapon>().StartDamage();
     }
 
     public void EndDamage()
     {
-        GetComponentInChildren<SwordDamageManager>().EndDamage();
+        GetComponentInChildren<Weapon>().EndDamage();
     }
 }

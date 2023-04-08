@@ -25,3 +25,10 @@ MonoBehaviour:
   bodyPart: 3
   itemPrefab: {fileID: 5096797749881093665, guid: c7349441bb611af45ad4757004d4542b, type: 3}
   item: {fileID: 0}
+  weaponClips:
+  - stateName: Attack1
+    clip: {fileID: -203655887218126122, guid: 679184791bbb27f48b93f28eb31acbf6, type: 3}
+  - stateName: Attack2
+    clip: {fileID: -203655887218126122, guid: eb23863eabb83874fa0891cf9a4d3661, type: 3}
+  - stateName: Attack3
+    clip: {fileID: -203655887218126122, guid: 98ab3a0a411bf734db7f7dc9cf151606, type: 3}

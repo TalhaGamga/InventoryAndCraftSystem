@@ -2,28 +2,28 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
-public class UIControlState : CharacterStateBase
+public class UIControlState : CharacterStateBase<PlayerStateManager>
 {
-    CharacterStateType formerStateType;
-    public override void EnterState(CharacterStateManager characterStateManager)
+    PlayerStateType formerStateType;
+    public override void EnterState(PlayerStateManager characterStateManager)
     {
         EventManager.OnSwitchToUIControllerState -= characterStateManager.SwitchToUIControllerState;
     }
 
-    public override void UpdateState(CharacterStateManager characterStateManager)
+    public override void UpdateState(PlayerStateManager characterStateManager)
     {
         if (Keyboard.current.escapeKey.wasPressedThisFrame)
         {
             characterStateManager.SwitchState(formerStateType);
-        }
+        } 
     }
 
-    public override void ExitState(CharacterStateManager characterStateManager)
+    public override void ExitState(PlayerStateManager characterStateManager)
     {
         EventManager.OnSwitchToUIControllerState += characterStateManager.SwitchToUIControllerState;
     }
 
-    public void GetFormerState(CharacterStateType formerStateType, CharacterStateManager characterStateManager)
+    public void GetFormerState(PlayerStateType formerStateType, PlayerStateManager characterStateManager)
     {
         this.formerStateType = formerStateType;
     }

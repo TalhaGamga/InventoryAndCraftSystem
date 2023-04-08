@@ -2,17 +2,17 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class CraftingRecipeData : MonoBehaviour
+[CreateAssetMenu(menuName = "Inventory/CraftingRecipeData")]
+public class CraftingRecipeData : ScriptableObject
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+    [SerializeField] InputObject[] inputObjects;
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
+    [SerializeField] InventoryItemData craftedObject;
+}
+
+[System.Serializable]
+public class InputObject
+{
+    public InventoryItemData inputItem;
+    public int size;
 }

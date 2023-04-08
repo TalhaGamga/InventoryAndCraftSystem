@@ -1,6 +1,6 @@
 using System;
 using UnityEngine;
-public class MovementState : CharacterStateBase
+public class MovementState : CharacterStateBase<PlayerStateManager>
 {
     ThirdPersonMovementLogic movementLogic;
 
@@ -21,12 +21,12 @@ public class MovementState : CharacterStateBase
         this.playerInput = playerInput;
     }
 
-    public override void EnterState(CharacterStateManager characterStateManager)
+    public override void EnterState(PlayerStateManager characterStateManager)
     {
         playerInput.OnJumpPress += movementLogic.OnJump;
     }
 
-    public override void UpdateState(CharacterStateManager characterStateManager)
+    public override void UpdateState(PlayerStateManager characterStateManager)
     {
         playerInput.CheckInput();
 
@@ -42,7 +42,7 @@ public class MovementState : CharacterStateBase
         movementLogic.UpdateAnimator();
     }
 
-    public override void ExitState(CharacterStateManager characterStateManager)
+    public override void ExitState(PlayerStateManager characterStateManager)
     {
         playerInput.OnJumpPress -= movementLogic.OnJump;
         animator.SetFloat("MoveSpeed", 0);

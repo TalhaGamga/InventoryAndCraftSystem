@@ -3,7 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class AIMovementState : AIStateBase
+public class AIMovementState : CharacterStateBase<AIStateManager>
 {
 
     Transform scanPoint;

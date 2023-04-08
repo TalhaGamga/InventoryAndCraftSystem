@@ -32,11 +32,11 @@ public class PlayerWeaponAnimationManager : MonoBehaviour
 
     public void StartDamage()
     {
-        GetComponentInChildren<SwordDamageManager>().StartDamage();
+        //GetComponentInChildren<WeaponDamageManager>().StartDamage();
     }
 
     public void EndDamage()
     {
-        GetComponentInChildren<SwordDamageManager>().EndDamage();
+        //GetComponentInChildren<WeaponDamageManager>().EndDamage();
     }
 }

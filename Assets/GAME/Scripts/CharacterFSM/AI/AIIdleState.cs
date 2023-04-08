@@ -3,7 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class AIIdleState : AIStateBase
+public class AIIdleState : CharacterStateBase<AIStateManager>
 {
     float scanIdleRadius;
     LayerMask scanLayer;

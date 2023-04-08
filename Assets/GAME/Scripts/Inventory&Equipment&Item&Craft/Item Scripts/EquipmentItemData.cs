@@ -17,7 +17,7 @@ public class EquipmentItemData : InventoryItemData
 
     public void Attach(Transform parent)
     {
-        if (item==null)
+        if (item == null)
         {
             item = Instantiate(itemPrefab);
         }
