@@ -6,7 +6,7 @@ using UnityEditor.Animations;
 using UnityEngine;
 using UnityEngine.Animations;
 
-public class PlayerAnimatorManager : MonoBehaviour
+public class AnimationSwapSystem : MonoBehaviour
 {
     Animator playerAnimator;
 

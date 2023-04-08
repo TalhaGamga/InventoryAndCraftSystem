@@ -13,12 +13,12 @@ public class Weapon : MonoBehaviour
 
     private void Start()
     {
-        PlayerAnimatorManager.OnChangeAnimatorCombatLayer?.Invoke(overrideController); 
+        AnimationSwapSystem.OnChangeAnimatorCombatLayer?.Invoke(overrideController); 
     }
 
     private void OnDestroy()
     {
-        PlayerAnimatorManager.OnResetAnimatorCombatLayer?.Invoke();
+        AnimationSwapSystem.OnResetAnimatorCombatLayer?.Invoke();
     }
 
     private void Update()
