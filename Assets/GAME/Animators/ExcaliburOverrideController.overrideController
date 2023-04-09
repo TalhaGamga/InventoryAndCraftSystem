@@ -1,0 +1,17 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!221 &22100000
+AnimatorOverrideController:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: ExcaliburOverrideController
+  m_Controller: {fileID: 9100000, guid: faea2f999d00ce4489e20a3bf5902a16, type: 2}
+  m_Clips:
+  - m_OriginalClip: {fileID: -203655887218126122, guid: 98ab3a0a411bf734db7f7dc9cf151606, type: 3}
+    m_OverrideClip: {fileID: -203655887218126122, guid: fe1edf7211b52724c8a6f8a5d50456a6, type: 3}
+  - m_OriginalClip: {fileID: -203655887218126122, guid: 679184791bbb27f48b93f28eb31acbf6, type: 3}
+    m_OverrideClip: {fileID: -203655887218126122, guid: 9ff2e441163b716458fd3bee2749a24c, type: 3}
+  - m_OriginalClip: {fileID: -203655887218126122, guid: eb23863eabb83874fa0891cf9a4d3661, type: 3}
+    m_OverrideClip: {fileID: -203655887218126122, guid: fe1edf7211b52724c8a6f8a5d50456a6, type: 3}

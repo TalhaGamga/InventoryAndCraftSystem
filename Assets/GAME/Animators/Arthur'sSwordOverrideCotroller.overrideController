@@ -6,7 +6,7 @@ AnimatorOverrideController:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: SwordOverrideCotroller
+  m_Name: Arthur'sSwordOverrideCotroller
   m_Controller: {fileID: 9100000, guid: faea2f999d00ce4489e20a3bf5902a16, type: 2}
   m_Clips:
   - m_OriginalClip: {fileID: 7400000, guid: 481b7c57a4b5322448bd964184452e65, type: 2}
@@ -47,3 +47,5 @@ AnimatorOverrideController:
     m_OverrideClip: {fileID: -203655887218126122, guid: 404284c12abd9b64e9e8146a26279217, type: 3}
   - m_OriginalClip: {fileID: -203655887218126122, guid: eb23863eabb83874fa0891cf9a4d3661, type: 3}
     m_OverrideClip: {fileID: -203655887218126122, guid: 1af2493c16af75842a83169579e4b7bf, type: 3}
+  - m_OriginalClip: {fileID: -203655887218126122, guid: 9a1a5507c857e044288f0f74d13f59fd, type: 3}
+    m_OverrideClip: {fileID: -203655887218126122, guid: 300718f3b9f522d4585e80f1ede2f755, type: 3}

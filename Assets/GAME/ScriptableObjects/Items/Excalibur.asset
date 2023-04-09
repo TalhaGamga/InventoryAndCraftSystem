@@ -10,12 +10,12 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 3a5d7a6b694fe1d4ea9516cef0b82c4d, type: 3}
-  m_Name: Hammer
+  m_Name: Excalibur
   m_EditorClassIdentifier: 
   ID: 1
-  DisplayName: Hammer
+  DisplayName: Excalibur
   Description: Hammer
-  Icon: {fileID: 21300000, guid: 529590dcea963be4891a98198e29f0ad, type: 3}
+  Icon: {fileID: 21300000, guid: b57bf8eab746eb94f9ec0c20080df672, type: 3}
   MaxStackSize: 1
   Value: 9000
   itemType: 1
@@ -23,5 +23,5 @@ MonoBehaviour:
   localRotation: {x: 0, y: 0, z: 0.64773434, w: 0.7618663}
   localScale: {x: 1.5215, y: 1.5215, z: 1.5215}
   bodyPart: 3
-  itemPrefab: {fileID: 3373890131828804470, guid: aff40689016edc94e9fe788d4a2c47be, type: 3}
+  itemPrefab: {fileID: 626282352945076595, guid: 07386ea35b0703b4b860da37b73db8c3, type: 3}
   item: {fileID: 0}

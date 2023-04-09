@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 2709380954738807244}
   - component: {fileID: 1312372727547780713}
   - component: {fileID: 3878315349878614691}
+  - component: {fileID: -8403785240818640901}
   m_Layer: 0
   m_Name: FantasyHammer_Unity
   m_TagString: Untagged
@@ -83,3 +84,23 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!114 &-8403785240818640901
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3373890131828804470}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 30da2336b23a6f24881c1ba767686aaf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  swordLength: 1.2
+  layer:
+    serializedVersion: 2
+    m_Bits: 1
+  isAttackable: 0
+  isAttacked: 0
+  damage: 2
+  overrideController: {fileID: 22100000, guid: f3f867614b4b2564e817339c3f27c786, type: 2}
