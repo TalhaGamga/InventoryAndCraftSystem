@@ -10,7 +10,7 @@ public class AnimationSwapSystem : MonoBehaviour
 {
     Animator playerAnimator;
 
-    public static Action<AnimatorOverrideController> OnChangeAnimatorCombatLayer;
+    public static Action<Animator> OnChangeAnimatorCombatLayer;
     public static Action OnResetAnimatorCombatLayer;
 
     [SerializeField] private AnimatorOverrideController defaultAnimator;
@@ -31,9 +31,9 @@ public class AnimationSwapSystem : MonoBehaviour
         playerAnimator = GetComponent<Animator>();
     }
 
-    public void ChangeAnimatorCombatLayer(AnimatorOverrideController overrideController)
+    public void ChangeAnimatorCombatLayer(Animator overrideAnimator)
     {
-        playerAnimator.runtimeAnimatorController = overrideController;
+        playerAnimator.runtimeAnimatorController = overrideAnimator.runtimeAnimatorController;
     }
 
     public void ResetAnimatorCombatLayer()

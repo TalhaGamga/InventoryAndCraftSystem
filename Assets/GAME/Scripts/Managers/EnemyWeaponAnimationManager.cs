@@ -11,6 +11,6 @@ public class EnemyWeaponAnimationManager : MonoBehaviour
 
     public void EndDamage()
     {
-        GetComponentInChildren<Weapon>().EndDamage();
+        GetComponentInChildren<Weapon>().EndDamage(); 
     }
 }

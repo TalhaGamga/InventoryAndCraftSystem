@@ -17,12 +17,12 @@ AnimatorStateTransition:
   m_Mute: 0
   m_IsExit: 0
   serializedVersion: 3
-  m_TransitionDuration: 0.47393987
+  m_TransitionDuration: 0.38257113
   m_TransitionOffset: 0
-  m_ExitTime: 0.52606016
+  m_ExitTime: 0.45382783
   m_HasExitTime: 1
   m_HasFixedDuration: 0
-  m_InterruptionSource: 0
+  m_InterruptionSource: 3
   m_OrderedInterruption: 1
   m_CanTransitionToSelf: 1
 --- !u!1107 &-8911845133553357105
@@ -828,14 +828,14 @@ AnimatorState:
   - {fileID: -4939968667349923886}
   m_StateMachineBehaviours: []
   m_Position: {x: 50, y: 50, z: 0}
-  m_IKOnFeet: 0
+  m_IKOnFeet: 1
   m_WriteDefaultValues: 1
   m_Mirror: 0
   m_SpeedParameterActive: 0
   m_MirrorParameterActive: 0
   m_CycleOffsetParameterActive: 0
   m_TimeParameterActive: 0
-  m_Motion: {fileID: -203655887218126122, guid: eb23863eabb83874fa0891cf9a4d3661, type: 3}
+  m_Motion: {fileID: -203655887218126122, guid: fe1edf7211b52724c8a6f8a5d50456a6, type: 3}
   m_Tag: 
   m_SpeedParameter: 
   m_MirrorParameter: 
@@ -1208,7 +1208,7 @@ AnimatorController:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: playerAnimator
+  m_Name: ExcaliburAnimator
   serializedVersion: 5
   m_AnimatorParameters:
   - m_Name: MoveSpeed
@@ -1404,7 +1404,7 @@ AnimatorState:
   m_MirrorParameterActive: 0
   m_CycleOffsetParameterActive: 0
   m_TimeParameterActive: 0
-  m_Motion: {fileID: -203655887218126122, guid: 98ab3a0a411bf734db7f7dc9cf151606, type: 3}
+  m_Motion: {fileID: -203655887218126122, guid: f9dc01109a15cdb42a52daae608c2c5b, type: 3}
   m_Tag: 
   m_SpeedParameter: 
   m_MirrorParameter: 
@@ -1707,7 +1707,7 @@ AnimatorState:
   m_MirrorParameterActive: 0
   m_CycleOffsetParameterActive: 0
   m_TimeParameterActive: 0
-  m_Motion: {fileID: -203655887218126122, guid: 679184791bbb27f48b93f28eb31acbf6, type: 3}
+  m_Motion: {fileID: -203655887218126122, guid: 665f152bb505606449d4a5af1ac662d1, type: 3}
   m_Tag: 
   m_SpeedParameter: 
   m_MirrorParameter: 
@@ -1931,7 +1931,7 @@ AnimatorStateTransition:
   m_ExitTime: 0.68904364
   m_HasExitTime: 1
   m_HasFixedDuration: 1
-  m_InterruptionSource: 2
+  m_InterruptionSource: 3
   m_OrderedInterruption: 1
   m_CanTransitionToSelf: 1
 --- !u!1107 &7699798133142718523

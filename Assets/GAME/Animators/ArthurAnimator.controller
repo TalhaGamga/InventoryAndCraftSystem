@@ -17,12 +17,12 @@ AnimatorStateTransition:
   m_Mute: 0
   m_IsExit: 0
   serializedVersion: 3
-  m_TransitionDuration: 0.47393987
-  m_TransitionOffset: 0
-  m_ExitTime: 0.52606016
+  m_TransitionDuration: 0.2499031
+  m_TransitionOffset: 0.21843618
+  m_ExitTime: 0.46382794
   m_HasExitTime: 1
   m_HasFixedDuration: 0
-  m_InterruptionSource: 0
+  m_InterruptionSource: 3
   m_OrderedInterruption: 1
   m_CanTransitionToSelf: 1
 --- !u!1107 &-8911845133553357105
@@ -1208,7 +1208,7 @@ AnimatorController:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: playerAnimator
+  m_Name: ArthurAnimator
   serializedVersion: 5
   m_AnimatorParameters:
   - m_Name: MoveSpeed
@@ -1390,7 +1390,7 @@ AnimatorState:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_Name: SwordAndShieldAttack
-  m_Speed: 1.5
+  m_Speed: 1
   m_CycleOffset: 0
   m_Transitions:
   - {fileID: 3314695550243018194}
@@ -1926,12 +1926,12 @@ AnimatorStateTransition:
   m_Mute: 0
   m_IsExit: 0
   serializedVersion: 3
-  m_TransitionDuration: 0.28027743
-  m_TransitionOffset: 0.012979161
-  m_ExitTime: 0.68904364
+  m_TransitionDuration: 0.24358958
+  m_TransitionOffset: 0
+  m_ExitTime: 0.530552
   m_HasExitTime: 1
   m_HasFixedDuration: 1
-  m_InterruptionSource: 2
+  m_InterruptionSource: 3
   m_OrderedInterruption: 1
   m_CanTransitionToSelf: 1
 --- !u!1107 &7699798133142718523

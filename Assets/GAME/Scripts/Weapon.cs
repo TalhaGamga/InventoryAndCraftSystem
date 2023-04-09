@@ -8,12 +8,12 @@ public class Weapon : MonoBehaviour
     [SerializeField] bool isAttackable = false;
     [SerializeField] bool isAttacked = false;
     [SerializeField] float damage;
-
-    [SerializeField] AnimatorOverrideController overrideController;
+     
+    [SerializeField] Animator overrideAnimator;
 
     private void Start()
     {
-        AnimationSwapSystem.OnChangeAnimatorCombatLayer?.Invoke(overrideController); 
+        AnimationSwapSystem.OnChangeAnimatorCombatLayer?.Invoke(overrideAnimator); 
     }
 
     private void OnDestroy()
@@ -49,25 +49,3 @@ public class Weapon : MonoBehaviour
         isAttacked = true;
     }
 }
-
-
-/*
-public Animator characterAnimator;
-public AnimationClip newAttackClip;
-
-void ChangeAttackAnimation()
-{
-    // Get the animator controller for the character
-    AnimatorController animatorController = characterAnimator.runtimeAnimatorController as AnimatorController;
-
-    // Get the Combat layer
-    AnimatorControllerLayer combatLayer = animatorController.layers.FirstOrDefault(layer => layer.name == "Combat");
-
-    // Get the Attack state
-    AnimatorStateMachine combatStateMachine = combatLayer.stateMachine;
-    AnimatorState attackState = combatStateMachine.states.FirstOrDefault(state => state.state.name == "Attack").state;
-
-    // Set the new attack clip on the state's motion property
-    attackState.motion = newAttackClip;
-}
- */

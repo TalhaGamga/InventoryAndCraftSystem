@@ -16,7 +16,7 @@ public class PlayerStateManager : MonoBehaviour
     PlayerStateType currentStateType = PlayerStateType.Movement;
 
     ThirdPersonMovementLogic movementLogic;
-    [SerializeField] EquipmentSlotUI weaponSlot; //this should be different.
+    [SerializeField] EquipmentSlotUI weaponSlot;
 
     private void Awake()
     {
