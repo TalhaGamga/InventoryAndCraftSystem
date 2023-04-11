@@ -9,14 +9,13 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 914308465eda2a44cb9d10ac28a8f300, type: 3}
-  m_Name: Sword
+  m_Script: {fileID: 11500000, guid: 810d10ddf8dc2e14f9b3958328bd89c5, type: 3}
+  m_Name: Metal
   m_EditorClassIdentifier: 
-  inputObjects:
-  - inputItem: {fileID: 0}
-    size: 0
-  - inputItem: {fileID: 0}
-    size: 0
-  - inputItem: {fileID: 0}
-    size: 0
-  craftedObject: {fileID: 0}
+  ID: 0
+  DisplayName: 
+  Description: 
+  Icon: {fileID: 0}
+  MaxStackSize: 0
+  Value: 0
+  itemType: 0

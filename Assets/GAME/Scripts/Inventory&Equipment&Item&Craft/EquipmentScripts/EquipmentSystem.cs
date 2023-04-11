@@ -20,24 +20,4 @@ public class EquipmentSystem : ScriptableObject
             equipmentSlots[i] = new EquipmentSlot();
         }
     }
-
-    public bool EquipItem(EquipmentItemData itemData, EquipmentSlot slot)
-    {
-        if (slot.AssignItem(itemData))
-        {
-            OnEquipmentSlotChanged?.Invoke(slot);
-            return true;
-        }
-
-        return false;
-    }
-    public bool EquipItem(EquipmentItemData itemData)
-    {
-        for (int i = 0; i < size; i++)
-        {
-            if (equipmentSlots[i].AssignItem(itemData)) return true;
-        }
-
-        return false;
-    }
 }

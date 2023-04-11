@@ -1,0 +1,20 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 914308465eda2a44cb9d10ac28a8f300, type: 3}
+  m_Name: SwordRecipeData
+  m_EditorClassIdentifier: 
+  inputItems:
+  - itemData: {fileID: 11400000, guid: abfef41955a76d14a999933673f6d906, type: 2}
+    size: 1
+  - itemData: {fileID: 11400000, guid: ad41a08b5b7fd6749b31d391027c7940, type: 2}
+    size: 2
+  resultData: {fileID: 11400000, guid: 5e3e76b53b7d34446815379f8d24b2ea, type: 2}
